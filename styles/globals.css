@@ -2,6 +2,7 @@
 
 :root {
 
+  /* 컬러 시스템 사용 */
   /* COLOR */
   --background: #ffffff;
   --foreground: #171717;
@@ -40,6 +41,7 @@
   --color-amber-8 : var(  --colo-amber-8)
 }
 
+/* 폰트 시스템 사용 */
 @layer base {
   .text-bold-2xl {
     font-size: 20px;

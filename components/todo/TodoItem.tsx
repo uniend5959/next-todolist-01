@@ -8,6 +8,7 @@ type TodoItemProps = {
   onAdd: () => void;
 };
 
+// 할일하나 
 const TodoItem = ({todo,onAdd}:TodoItemProps) => {
       const router = useRouter();
 

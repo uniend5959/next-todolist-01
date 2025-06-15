@@ -5,6 +5,8 @@ import Head from 'next/head';
 import localFont from "next/font/local";
 import Header from "@/components/header/header";
 
+// 나눔 스퀘어 폰트를 적용 
+
 export const nanumSquare = localFont({
   src: [
     {

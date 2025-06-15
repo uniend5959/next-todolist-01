@@ -12,7 +12,8 @@ type memoProps = {
 
 
 
-
+// 메모장 배경위에 TEXTAREA로 메모를 남기는 컴포넌트
+// 커스텀 훅 INPUT을 사용하여 코드의 가독성을 향상시켰습니다. 
 const TodoMemo = ({memoInput, todoDetail} : memoProps) => {
 
 

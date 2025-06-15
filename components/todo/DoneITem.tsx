@@ -1,9 +1,17 @@
 import { patchIsCompleted } from "@/lib/api/todoApi";
+import { Todo } from "@/type/type";
 import Image from "next/image"
 import { useRouter } from 'next/router';
 
 
-const DoneItem = ({todo,onAdd}) => {
+// 완료페이지의 박스 하나 컴포넌트 
+
+type DoneItemProps = {
+  todo: Todo;
+  onAdd: () => void;
+};
+
+const DoneItem = ({todo,onAdd}:DoneItemProps) => {
 const router = useRouter();
 
     
@@ -11,7 +19,7 @@ const router = useRouter();
       router.push(`/edit/${todo.id}`)
     } 
 
-    const isCompleted = async (e : React.FormEvent<HTMLFormElement>) => {
+    const isCompleted = async (e :  React.MouseEvent<HTMLImageElement>) => {
        e.stopPropagation();
 
         try{

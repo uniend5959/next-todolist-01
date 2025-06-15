@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 
+// 메모와 할일등록에서 재사용하기 위한 INPUT 커스텀 훅 
 const useInput = (initialValue: string ) => {
     const [value, setValue] = useState(initialValue)
 
