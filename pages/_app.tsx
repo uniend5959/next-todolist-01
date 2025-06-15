@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Head from 'next/head';
 
 import localFont from "next/font/local";
+import Header from "@/components/header/header";
 
 export const nanumSquare = localFont({
   src: [
@@ -28,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <link rel="icon" href="../public/assets/favicon.png" />
     </Head>
     <div className={`${nanumSquare.variable}`}>
+       <Header/>
       <Component {...pageProps} />;
     </div>
     
