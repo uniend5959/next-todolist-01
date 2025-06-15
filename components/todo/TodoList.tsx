@@ -1,11 +1,21 @@
 import Image from "next/image"
 import useIsMobile  from "@/hook/useIsMobile"
+import TodoItem from "./TodoItem";
+import { Todo } from "@/type/type";
 
 
-const TodoList = ({todo}) => {
+type TodoListProps = {
+  todos: Todo[];
+  onAdd: () => void;
+};
+
+
+const TodoList = ({todos, onAdd}:TodoListProps) => {
      const {isMobile} = useIsMobile();
+     const  notCompleted = todos.filter((todo) => todo.isCompleted === false)
      
-    if(todo.length === 0){
+     
+    if(todos.length === 0){
         return(
             <div className="">
                 <div className="relative w-[120px] h-[60px]">
@@ -30,8 +40,26 @@ const TodoList = ({todo}) => {
             </div>
         )
     }
+
+    
     return(
-        <></>
+        <>
+            <div className="">
+                <div className="relative w-[120px] h-[60px]">
+                    <Image
+                        fill
+                        src="/assets/todo.png"
+                        alt="doit"
+                        className="object-contain"
+                    ></Image>
+                </div>
+                <div className="">
+                    {notCompleted.map((todo) => 
+                       <TodoItem todo={todo} onAdd={onAdd}/>
+                    )}
+                </div>
+            </div>
+        </>
     )   
 }
 

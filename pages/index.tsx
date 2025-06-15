@@ -1,15 +1,16 @@
 import Layout from "@/components/container/layout";
-import Header from "@/components/header/header";
+
 import { getTodo } from '@/lib/api/todoApi'
 import type { InferGetServerSidePropsType } from 'next';
 import TodoList from "@/components/todo/TodoList";
 import DoneList from "@/components/todo/DoneLlist";
 import useIsMobile  from "@/hook/useIsMobile"
+import { useState } from "react";
+import AddTodo from "@/components/todo/AddTodo";
 
 
 export async function getServerSideProps() {
     const todo = await getTodo()
-    console.log('확인해봅시다 ', todo)
 
     return {
         props:{
@@ -21,21 +22,29 @@ export async function getServerSideProps() {
 
 export default function Home({todo} : InferGetServerSidePropsType<typeof getServerSideProps> ) {
   const {isMobile} = useIsMobile();
+  const [todos, setTodos] = useState(todo);
+
+    const refreshTodo = async () => {
+    const updated = await getTodo();
+    setTodos(updated);
+  };
 
   return (
     <>
-      <Header/>
       <div className="relative mt-[60px]  ">
         <Layout>
-          <div className="mt-8 flex justify-start flex-col md:flex-row ">
-            <div className="w-1/2 mb-8">
-              <TodoList todo={todo} />
-            </div>
-            <div className="w-1/2">
-               <DoneList todo={todo} />
-             </div>
+          <div className="mt-8">
+            <AddTodo onAdd={refreshTodo}/>
           </div>
-      </Layout>
+      <div className="mt-8 flex justify-start gap-8 flex-col md:flex-row">
+          <div className="w-full md:w-1/2 mb-8">
+            <TodoList todos={todos} onAdd={refreshTodo} />
+          </div>
+          <div className="w-full md:w-1/2">
+            <DoneList todos={todos} onAdd={refreshTodo} />
+          </div>
+        </div>
+        </Layout>
       </div>
     </>
   );
