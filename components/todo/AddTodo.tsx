@@ -1,5 +1,5 @@
 import useInput from "@/hook/useInput";
-import { getTodo, postTodo } from "@/lib/api/todoApi";
+import { postTodo } from "@/lib/api/todoApi";
 import Button from "../button/boxButton";
 
 

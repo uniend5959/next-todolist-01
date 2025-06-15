@@ -4,7 +4,6 @@ import { getTodo } from '@/lib/api/todoApi'
 import type { InferGetServerSidePropsType } from 'next';
 import TodoList from "@/components/todo/TodoList";
 import DoneList from "@/components/todo/DoneLlist";
-import useIsMobile  from "@/hook/useIsMobile"
 import { useState } from "react";
 import AddTodo from "@/components/todo/AddTodo";
 
@@ -23,7 +22,6 @@ export async function getServerSideProps() {
 
 
 export default function Home({todo} : InferGetServerSidePropsType<typeof getServerSideProps> ) {
-  const {isMobile} = useIsMobile();
   const [todos, setTodos] = useState(todo);
 
   // 클라이언틓 환경에서 , 새로고침 없이 데이터를 재호출 하기위한 함수  

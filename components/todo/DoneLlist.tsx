@@ -52,7 +52,7 @@ const DoneList = ({todos,onAdd }:TodoListProps) => {
                     </div>
                     <div className="">
                            {completed.map((todo) => 
-                       <DoneItem todo={todo} onAdd={onAdd}/>
+                       <DoneItem key={todo.id} todo={todo} onAdd={onAdd}/>
                     )}
                     </div>
                 </div>

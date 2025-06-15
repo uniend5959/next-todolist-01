@@ -1,7 +1,7 @@
-    import { Children } from "react"
+
 
     // props에따라 색상과 타입이 변경되는 기본 버튼 
-    
+
     type Props = {
         theme: "add" | "complete" | "edit" | "delete";
         children: React.ReactNode;
