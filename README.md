@@ -13,5 +13,5 @@
 ## 주요기능 
 | 기능 | 설명 |
 |------|------|
-| ![할 일 추가](![Image](https://github.com/user-attachments/assets/caf4ad91-721e-4dd0-8a8c-0e8730424eb0)) | **할 일 추가**<br/>텍스트 입력 후 버튼 클릭 시 새로운 할 일 등록 |
+| ![Image](https://github.com/user-attachments/assets/caf4ad91-721e-4dd0-8a8c-0e8730424eb0) | **할 일 추가**<br/>텍스트 입력 후 버튼 클릭 시 새로운 할 일 등록 |
 
