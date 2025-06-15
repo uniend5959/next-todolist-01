@@ -87,10 +87,10 @@ const EditTodo = ({todoDetail}: EditTodoProps) => {
                       <span> {todoDetail.name}</span>
                 </li>
                 <div className="mt-8 flex justify-start gap-8 flex-col md:flex-row">
-                    <div className="w-1/2 mb-8">
+                    <div className="w-full md:w-1/2 mb-8">
                          <UploadImage setServerImg={setServerImg} todoDetail={todoDetail}/>
                     </div>
-                    <div className="w-1/2">
+                    <div className="w-full md:w-1/2">
                         <TodoMemo memoInput={memoInput} todoDetail={todoDetail}/>
                     </div>
                 </div>
