@@ -17,7 +17,7 @@ const TodoList = ({todos, onAdd}:TodoListProps) => {
      const  notCompleted = todos.filter((todo) => todo.isCompleted === false)
      
      
-    if(todos.length === 0){
+    if(notCompleted.length === 0){
         return(
             <div className="">
                 <div className="relative w-[120px] h-[60px]">
