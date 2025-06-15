@@ -3,8 +3,11 @@ import { getTodo, postTodo } from "@/lib/api/todoApi";
 import Button from "../button/boxButton";
 
 
+// 할일을 등록하는 컴포넌트 
 
 const AddTodo = ({ onAdd }: { onAdd: () => void }) => {
+
+    // 재상용을 위한 커스텀 INPUT 훅을 제작하여, 코드를 재사용성을 높이고 가독성을 올렸습니다. 
     const {value,setValue, handleChange }  = useInput('')
 
     const handleSubmit = async  (e : React.FormEvent<HTMLFormElement>) => {

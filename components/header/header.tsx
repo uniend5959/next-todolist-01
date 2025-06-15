@@ -3,6 +3,9 @@ import Link from "next/link"
 import Layout from "../container/layout"
 import useIsMobile  from "@/hook/useIsMobile"
 
+// 화면의 크기에 따라 로고의 모양이 변화하는 공통 컴포넌트 
+// 커스텀 훅을 통해, 개별적인 이미지 모양 을 변화시켰습니다. 
+
 
 const Header = () => {
     const {isMobile} = useIsMobile();

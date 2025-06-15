@@ -10,6 +10,8 @@ type TodoListProps = {
 };
 
 
+// 할일 목록을 뿌려주는 컴포넌트 
+// 할일의 유무에  따라, 이미지를 보여주거나 목록을 보여줌  
 const TodoList = ({todos, onAdd}:TodoListProps) => {
      const {isMobile} = useIsMobile();
      const  notCompleted = todos.filter((todo) => todo.isCompleted === false)

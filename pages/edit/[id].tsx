@@ -25,6 +25,8 @@ export async function getServerSideProps(context: GetServerSidePropsContext){
     }
 }
 
+
+// 다이나믹 페이지로, 하나의 페이지로 파람 값에 맞는 데이터를 보여주는 컴포넌트 
 const EditTodo = ({todoDetail}: EditTodoProps) => {
     const router = useRouter();
     const [isCheked, setIsChecked] = useState(todoDetail.isCompleted ?? true)

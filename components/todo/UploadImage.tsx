@@ -7,6 +7,9 @@ type imageProps = {
   todoDetail: any
 };
 
+
+// 이미지를 업로드, 이미지 업로드 , 서버로 받아온 이미지를 보여주는 컴포넌트 
+// 전달되는 데이터의 종류에따라, 이미지를 다르게 보여주는 기능을 포함  
 const UploadImage = ({setServerImg, todoDetail }:imageProps ) => {
 
     const fileRef = useRef<HTMLInputElement | null>(null);
@@ -37,7 +40,9 @@ const UploadImage = ({setServerImg, todoDetail }:imageProps ) => {
         formData.append("image", file)
 
         try{
+            // 서버로부터 이미지를 받아옴 
             const res = await postUploadImage(formData)
+            // 부모컴포넌트로 이미지를 보냄  
             setServerImg(res.url)
         }
         catch(error){

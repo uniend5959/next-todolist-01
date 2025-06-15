@@ -8,11 +8,12 @@ type TodoListProps = {
   onAdd: () => void;
 };
 
-
+// 완료된 할일 컴포넌트 
 const DoneList = ({todos,onAdd }:TodoListProps) => {
      const {isMobile} = useIsMobile();
          const  completed = todos.filter((todo) => todo.isCompleted === true)
          
+    // 받아오는 데이터의 길이에 따라, 이미지와 목록의 유무를 변화 
       if(completed.length === 0){
             return(
                 <div className="">

@@ -1,5 +1,5 @@
 
-
+// 화면 크기에 따라, width 값이 유동적으로 변화는 컴포넌트  
 type LayoutProps = {
   children: React.ReactNode;
 };
