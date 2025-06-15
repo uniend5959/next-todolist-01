@@ -1,10 +1,11 @@
 import { postUploadImage } from "@/lib/api/todoApi";
+import { TodoDetailType } from "@/type/type";
 import Image from "next/image"
 import {  useRef, useState } from "react"
 
 type imageProps = {
   setServerImg: React.Dispatch<React.SetStateAction<string>>;
-  todoDetail: any
+  todoDetail: TodoDetailType
 };
 
 

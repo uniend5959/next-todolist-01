@@ -1,3 +1,4 @@
+import { TodoDetailType } from "@/type/type";
 import { useEffect } from "react";
 
 
@@ -7,7 +8,7 @@ type memoProps = {
     setValue: React.Dispatch<React.SetStateAction<string>>;
     handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   };
-  todoDetail: any
+  todoDetail: TodoDetailType
 };
 
 
@@ -22,7 +23,7 @@ const TodoMemo = ({memoInput, todoDetail} : memoProps) => {
       if (todoDetail.memo) {
         memoInput.setValue(todoDetail.memo);
       }
-    }, [todoDetail.memo]);
+    }, []);
 
 
 
