@@ -16,8 +16,9 @@ type EditTodoProps = {
 
 
 export async function getServerSideProps(context: GetServerSidePropsContext){
-    const { id } = context.params 
-    const todoDetail = await getTodoDetail(id)
+     const { id } = context.params as { id: string }; // ✅ 타입 단언 추가
+  const numericId = parseInt(id, 10);
+    const todoDetail = await getTodoDetail(numericId)
     return{
         props: {
             todoDetail
